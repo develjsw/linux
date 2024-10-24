@@ -9,6 +9,7 @@
         EX)
         $ git checkout -- text.txt
         ~~~
+      
 - Vim 편집기
   - $ shift + v, 방향키/PageUp/PageDown
     - 라인 단위로 영역을 선택하여 여러 줄을 한 번에 선택 가능
@@ -16,5 +17,12 @@
         ~~~
         EX)
         shift + v  →  방향키로 여러 줄 선택  →  d(삭제)
+        ~~~
+- ETC
+  - $ tr -d '[:space:]' < 파일명입력 > temp_file && mv temp_file 파일명입력
+    - 파일에서 모든 공백(스페이스, 탭, 줄 바꿈 등) 제거 후, 그 결과를 원본 파일에 덮어 씌우는 명령어
+        ~~~
+        EX)
+        $ tr -d '[:space:]' < db_secret_key > temp_file && mv temp_file db_secret_key       
         ~~~
 ---
