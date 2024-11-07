@@ -18,11 +18,36 @@
         EX)
         shift + v  →  방향키로 여러 줄 선택  →  d(삭제)
         ~~~
+- Docker
+  - $ docker inspect < 컨테이너명입력 > | grep "< 키워드입력 >"
+    - 특정 컨테이너의 키워드에 해당되는 모든 설정정보 JSON 형식으로 출력
+        ~~~
+        EX)
+        $ docker inspect < 컨테이너명입력 > | grep "Env" -- = $ docker exec -it < 컨테이너명입력 > /bin/bash 후 $ env 입력 
+        $ docker inspect < 컨테이너명입력 > | grep "NetworkSettings"
+        $ docker inspect < 컨테이너명입력 > | grep "IPAddress"
+        ~~~
 - ETC
   - $ tr -d '[:space:]' < 파일명입력 > temp_file && mv temp_file 파일명입력
     - 파일에서 모든 공백(스페이스, 탭, 줄 바꿈 등) 제거 후, 그 결과를 원본 파일에 덮어 씌우는 명령어
         ~~~
         EX)
         $ tr -d '[:space:]' < db_secret_key > temp_file && mv temp_file db_secret_key       
+        ~~~
+  - $ find /< 경로입력 > -name "< 파일/폴더명입력 >"
+    - 파일/폴더명 찾을 때 사용하는 명령어
+        ~~~
+        EX) 
+        $ find /data/www -name "nest-api" -- nest-api 파일/폴더 찾기
+        $ find /data/www -name "*api*" -- api라는 키워드가 들어간 파일/폴더 찾기
+        $ find /data/www -iname "*api*" -- 대소문자 구분없이 api라는 키워드가 들어간 파일/폴더 찾기
+        ~~~
+  - $ grep "< 찾을문자열 >" /< 경로입력 >
+    - 문자열 찾을 때 사용하는 명령어
+        ~~~
+        EX) 
+        $ grep "failed" /var/log/* -- 해당경로 디렉토리 내에 모든 파일에서 특정 문자열 찾기
+        $ grep -i "failed" /var/log/* -- 대소문자 구분없이 해당경로 디렉토리 내에 모든 파일에서 특정 문자열 찾기
+        $ grep -r "failed" /var/log/* -- 하위 디렉토리를 포함하여 문자열 찾기
         ~~~
 ---
