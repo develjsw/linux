@@ -16,7 +16,13 @@
     - 선택한 영역을 지우거나, 복사, 들여쓰기/내어쓰기 작업을 할 때 유용
         ~~~
         EX)
-        shift + v  →  방향키로 여러 줄 선택  →  d(삭제)
+        $ shift + v  →  방향키로 여러 줄 선택  →  d(삭제)
+        ~~~
+  - $ shift + insert
+    - 윈도우에서 복사한 내용을 vim에서 붙여넣기 할때 사용
+        ~~~
+        EX)
+        $ shift + insert
         ~~~
 - Docker
   - $ docker inspect < 컨테이너명입력 > | grep "< 키워드입력 >"
